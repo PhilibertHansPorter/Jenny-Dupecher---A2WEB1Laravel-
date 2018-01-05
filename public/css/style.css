@@ -1,0 +1,10 @@
+body {
+    background-color: darkgrey !important;
+    margin: 0
+}
+
+header{
+    height: 10vh;
+    background-color: dimgrey !important;
+    box-shadow: 0 2px 4px black;
+}
