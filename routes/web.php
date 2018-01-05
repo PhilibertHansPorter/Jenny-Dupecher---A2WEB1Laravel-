@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@welcome');
+Route::get('/mes-articles', 'UserController@articles')
+    ->name('user.articles')
+    /*->middleware('auth')*/;
 
+Route::resource('/blog', 'BlogController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/blog', 'BlogController');
+Route::get('/home', 'HomeController@index')
+    ->name('home');
+//Route::get('/articles', ['as' => 'myArticles', 'uses' => 'UserController@']);
