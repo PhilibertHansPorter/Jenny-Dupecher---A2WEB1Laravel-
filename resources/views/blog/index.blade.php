@@ -22,8 +22,12 @@
                             </div>
                         @endforeach
                     </div>
+
                 </div>
+                <a class="btn btn-primary" href="blog/create" role="button">Créer un article</a>
             </div>
+
         </div>
+
     </div>
 @endsection
