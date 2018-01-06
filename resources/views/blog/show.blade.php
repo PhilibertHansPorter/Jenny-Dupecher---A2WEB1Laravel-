@@ -10,7 +10,7 @@
                         <h2>{{ $post->title }}</h2>
                         @if($post->user)
 
-                                <h3>Auteur: {{ $post->user->name }}</h3>
+                            <h3>Auteur: {{ $post->user->name }}</h3>
 
                         @endif
 
@@ -23,6 +23,37 @@
                         </p>
                     </div>
                 </div>
+                <div class="comments">
+                    <ul class="list-group">
+                        @foreach($post->comments as $comment)
+                            <li class="list-group-item">
+                                {{ $comment->body }}
+                            </li>
+                        @endforeach
+                    </ul>
+
+                </div>
+                <hr>
+                <div class="card">
+                    <div class="card-block">
+                        <form method="POST" action="/blog/{{ $post->id }}/comments">
+
+                            {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <textarea name="body" class="form-control">
+
+                                </textarea>
+                            </div>
+                            <div class="card-block">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Publish</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

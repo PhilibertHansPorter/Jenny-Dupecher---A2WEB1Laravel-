@@ -22,3 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')
     ->name('home');
 //Route::get('/articles', ['as' => 'myArticles', 'uses' => 'UserController@']);
+Route::post('/blog/{post}/comments', 'CommentsController@store');
+
+
