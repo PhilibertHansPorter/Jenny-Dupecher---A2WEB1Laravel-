@@ -28,7 +28,12 @@
                         @foreach($post->comments as $comment)
                             <li class="list-group-item">
                                 {{ $comment->body }}
+
+                                @if(Auth::user()->id === $comment->user_id)
+                                    <a href=" {{ action('CommentsController@showUpdateCommentForm', $id = $comment->id) }}">Modify</a>
+                                @endif
                             </li>
+
                         @endforeach
                     </ul>
 
@@ -36,7 +41,7 @@
                 <hr>
                 <div class="card">
                     <div class="card-block">
-                        <form method="POST" action="/blog/{{ $post->id }}/comments">
+                        <form method="POST" action="{{ action('CommentsController@store', $id = $post->id) }}">
 
                             {{ csrf_field() }}
 

@@ -29,7 +29,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')
     ->name('home');
 //Route::get('/articles', ['as' => 'myArticles', 'uses' => 'UserController@']);
-Route::post('/blog/{post}/comments', 'CommentsController@store');
+Route::post('/blog/comments/{id}', 'CommentsController@store');
+Route::get('blog/comments/update/{id}', 'CommentsController@showUpdateCommentForm');
+Route::post('/blog/comments/update/{id}', 'CommentsController@update');
 
 // contact
 Route::get('/contact', [
