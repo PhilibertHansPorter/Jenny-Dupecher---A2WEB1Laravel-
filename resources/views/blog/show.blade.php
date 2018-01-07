@@ -1,4 +1,4 @@
-@extends('templates.layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -6,7 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-
+                        <a href=" {{ action('BlogController@vote', $id = $post->id) }}">Appuie pour Poce Blo</a>
+                        <p> Likes : {{ $post->vote }}</p>
                         <h2>{{ $post->title }}</h2>
                         @if($post->user)
 
@@ -16,7 +17,7 @@
 
                     </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" style="background-color: darkgrey !important;">
 
                         <p>
                             {{ $post->body }}
@@ -24,13 +25,17 @@
                     </div>
                 </div>
                 <div class="comments">
-                    <ul class="list-group">
+                    <ul class="list-group" >
                         @foreach($post->comments as $comment)
-                            <li class="list-group-item">
+                            <li class="list-group-item" style="background-color: darkgrey !important;">
+
                                 {{ $comment->body }}
+
+
 
                                 @if(Auth::user()->id === $comment->user_id)
                                     <a href=" {{ action('CommentsController@showUpdateCommentForm', $id = $comment->id) }}">Modify</a>
+                                    <a href=" {{ action('CommentsController@destroy', $id = $comment->id) }}">Delete</a>
                                 @endif
                             </li>
 

@@ -36,4 +36,11 @@ class CommentsController extends Controller
 
         return redirect()->action('BlogController@show', $slug = $post->slug);
     }
+
+    public function destroy($id)
+    {
+        Comment::where('id', $id)->delete();
+
+        return redirect()->back();
+    }
 }

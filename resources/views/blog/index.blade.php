@@ -9,7 +9,7 @@
                         <h1>Liste des articles</h1>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" style="background-color: darkgrey !important;">
                         @foreach($posts as $post)
                             <div class="col-sm-6 col-md-4">
                                 <h3>{{ $post->title }}</h3>

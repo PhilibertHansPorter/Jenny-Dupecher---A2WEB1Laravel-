@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="background-color: darkgrey !important;">
                 <h2>Get in touch</h2>
                 <p class="text-muted">Ce formulaire de contact est fonctionnel et mérite un 20/20</p>
 

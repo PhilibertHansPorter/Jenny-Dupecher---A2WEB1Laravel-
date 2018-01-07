@@ -8,14 +8,18 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>MPF</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+
+
+    </style>
 </head>
 <body>
-<div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
+<div id="app" style="color: white !important;">
+    <nav class="navbar navbar-default navbar-static-top" style="background-color: dimgrey !important; ">
         <div class="container">
             <div class="navbar-header">
 
@@ -29,8 +33,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}" style="color:red !important;">
+                    MPF
                 </a>
             </div>
 
@@ -38,10 +42,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     &nbsp;<li>
-                        <a href="{{ route('blog.index') }}">Blog</a>
+                        <a href="{{ route('blog.index') }}" style="color:white !important;">Blog</a>
                     </li>
                     <li>
-                        <a href="{{ route('contact_path') }}">Contact</a>
+                        <a href="{{ route('contact_path') }}" style="color:white !important;">Contact</a>
                     </li>
                 </ul>
 
@@ -54,7 +58,7 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false" aria-haspopup="true">
+                               aria-expanded="false" aria-haspopup="true" style="color:white !important;">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

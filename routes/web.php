@@ -32,6 +32,9 @@ Route::get('/home', 'HomeController@index')
 Route::post('/blog/comments/{id}', 'CommentsController@store');
 Route::get('blog/comments/update/{id}', 'CommentsController@showUpdateCommentForm');
 Route::post('/blog/comments/update/{id}', 'CommentsController@update');
+Route::get('blog/comments/delete/{id}', 'CommentsController@destroy');
+Route::get('/blog/vote/{id}', 'BlogController@vote');
+
 
 // contact
 Route::get('/contact', [
@@ -43,6 +46,5 @@ Route::post('/contact', [
     'as' => 'contact_path',
     'uses' => 'ContactsController@store'
 ]);
-// dada
 
 

@@ -9,6 +9,19 @@ use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
+    public function vote($id)
+    {
+
+       $post = Post::where('id', $id)->first();
+       //$newVote = $post->vote + 1;
+       //Post::where('id', $id)->udpate([
+       //    'vote' => $newVote,
+       //]);
+       $post->vote = $post->vote + 1;
+       $post->save();
+       return redirect()->back();
+    }
+
     public function __construct()
     {
         $this->middleware('auth');
